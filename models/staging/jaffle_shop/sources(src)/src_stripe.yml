@@ -1,0 +1,15 @@
+version: 2
+
+sources: 
+  - name: stripe
+    description: a database
+    database: dbt-tutorial
+    tables:
+      - name: payment
+        description: raw payment data
+        columns:
+          - name: payment_id
+            description: primary key for payment table
+            tests:
+              - unique
+              - not_null
